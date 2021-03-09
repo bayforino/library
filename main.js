@@ -3,17 +3,26 @@ const gridContainer = document.querySelector(".grid-container");
 const addButton = document.querySelector(".add-book-button");
 const emptyMessage = document.querySelector(".library-empty-message");
 const main = document.querySelector("main");
+const form = document.getElementById("book-form");
 
+function sayIfRead(readStatus){
+  if (readStatus){
+    return `<p class="read">Read ✓</p>`;
+  } else {
+    console.log(readStatus);
+    return `<p class="not-read">Not Read</p>`;
+  }
+}
 
 function Book(title, author, length, readStatus) {
   this.title = title;
   this.author = author;
   this.length = length;
   this.readStatus = readStatus;
-  this.info = `<h2>${this.title}</h2><p> by ${this.author}.</p> <p>${this.length} pages long.</p> <p>${this.readStatus}</p>`;
+  this.info = `<h2>${this.title}</h2><p> by ${this.author}.</p> <p>${
+    this.length
+  } pages long.</p> ${sayIfRead(this.readStatus)}`;
 }
-
-
 
 function addBookToLibrary() {
   if (myLibrary.length >= 0) {
@@ -22,7 +31,7 @@ function addBookToLibrary() {
   const title = prompt(`title`);
   const author = prompt(`author`);
   const length = prompt(`length`);
-  const readStatus = prompt(`read status`);
+  const readStatus = false;
 
   myLibrary.push(new Book(title, author, length, readStatus));
   generateLibrary();
@@ -45,7 +54,7 @@ function generateLibrary() {
 
 function createClearButton(gridItems) {
   let clearButton = document.createElement("button");
-  clearButton.textContent = "X";
+  clearButton.textContent = "✖";
   clearButton.setAttribute(`data-attribute`, i);
   clearButton.classList.add("remove-button");
   gridItems[i].appendChild(clearButton);
@@ -79,4 +88,13 @@ function resetDataTagOrder() {
   }
 }
 
+function openForm() {
+  form.style.display = "block";
+}
+
+function closeForm() {
+  form.style.display = "none";
+}
 addButton.addEventListener("click", addBookToLibrary);
+
+form.addEventListener("submit", addBookToLibrary);

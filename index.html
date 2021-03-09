@@ -4,12 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>My Library</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="form-popup" id="book-form">
+      <form class="form-container" autocomplete="off">
+        <h1>Add a book</h1>
+
+        <label for="title"><b>Title</b></label>
+        <input type="text" placeholder="Enter Title" name="title" required />
+
+        <label for="author"><b>Author</b></label>
+        <input type="text" placeholder="Enter Author" name="author" />
+        <span class="readQuestion">Have you read the book?</span>
+                    <label class="switch" for="read">
+                        <input type="checkbox" id="read" class="read"/>  
+                        <span class="slider round"></span>
+                    </label>
+        <button type="submit" class="btn">Enter</button>
+        <button type="submit" class="btn cancel" onclick="closeForm()">
+          Cancel
+        </button>
+      </form>
+    </div>
     <header>
-      <h1>My Library</h1>
+      <h1>myLibrary</h1>
       <button class="add-book-button">Add book to library</button>
     </header>
     <main>
@@ -18,6 +38,7 @@
       </div>
       <div class="grid-container"></div>
     </main>
+
     <script src="main.js"></script>
   </body>
 </html>
