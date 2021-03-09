@@ -92,6 +92,7 @@ main {
   animation-name: slidein;
   align-items: top;
   justify-items: top;
+  transition: background-color 0.1s;
 }
 
 @keyframes slidein {
@@ -207,13 +208,20 @@ main {
   padding: 1em;
   background-color: white;
   border-radius: 0.5em;
+  user-select:none;
 }
 
 #enter-btn{
     margin-top:1.5em;
 }
 
-.form-container input[type="text"] {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+
+}
+
+.form-container input[type="text"], input[type="number"]{
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -222,7 +230,9 @@ main {
   box-sizing: border-box;
 }
 
-.form-container input[type="text"]:focus {
+
+
+.form-container input[type="text"]:focus, input[type="number"]:focus{
   background-color: #ddd;
   outline: none;
 }
