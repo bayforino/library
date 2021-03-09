@@ -5,8 +5,10 @@ const emptyMessage = document.querySelector(".library-empty-message");
 const main = document.querySelector("main");
 const form = document.getElementById("book-form");
 
-function sayIfRead(readStatus){
-  if (readStatus){
+let newBook;
+
+function sayIfRead(readStatus) {
+  if (readStatus) {
     return `<p class="read">Read ✓</p>`;
   } else {
     console.log(readStatus);
@@ -22,19 +24,6 @@ function Book(title, author, length, readStatus) {
   this.info = `<h2>${this.title}</h2><p> by ${this.author}.</p> <p>${
     this.length
   } pages long.</p> ${sayIfRead(this.readStatus)}`;
-}
-
-function addBookToLibrary() {
-  if (myLibrary.length >= 0) {
-    emptyMessage.style.display = "none";
-  }
-  const title = prompt(`title`);
-  const author = prompt(`author`);
-  const length = prompt(`length`);
-  const readStatus = false;
-
-  myLibrary.push(new Book(title, author, length, readStatus));
-  generateLibrary();
 }
 
 function generateLibrary() {
@@ -95,6 +84,23 @@ function openForm() {
 function closeForm() {
   form.style.display = "none";
 }
-addButton.addEventListener("click", addBookToLibrary);
+addButton.addEventListener("click", openForm);
 
-form.addEventListener("submit", addBookToLibrary);
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (myLibrary.length >= 0) {
+    emptyMessage.style.display = "none";
+  }
+  let formValue = event.target.elements;
+
+  newBook = new Book(
+    formValue.title.value,
+    formValue.author.value,
+    formValue.pages.value,
+    formValue.read.checked
+  );
+
+  myLibrary.push(newBook);
+  closeForm();
+  generateLibrary();
+});

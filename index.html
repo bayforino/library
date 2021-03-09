@@ -17,13 +17,16 @@
 
         <label for="author"><b>Author</b></label>
         <input type="text" placeholder="Enter Author" name="author" />
-        <span class="readQuestion">Have you read the book?</span>
-                    <label class="switch" for="read">
-                        <input type="checkbox" id="read" class="read"/>  
-                        <span class="slider round"></span>
-                    </label>
-        <button type="submit" class="btn">Enter</button>
-        <button type="submit" class="btn cancel" onclick="closeForm()">
+
+        <label for="pages"><b>Pages</b></label>
+        <input type="text" placeholder="Enter Number of Pages" name="pages" />
+
+        <span class="read-question">Have you read the book?</span>
+        <label class="check" for="read">
+          <input type="checkbox" id="read" class="read" />
+        </label>
+        <button type="submit" class="btn" id="enter-btn">Enter</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">
           Cancel
         </button>
       </form>

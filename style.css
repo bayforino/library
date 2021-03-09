@@ -18,12 +18,12 @@ header {
   justify-content: center;
   align-items: center;
   height: 10%;
-  min-height:5em;
+  min-height: 5em;
   max-height: 7em;
   padding-left: 3.5em;
   padding-right: 3.5em;
   user-select: none;
-  margin-bottom:3em;
+  margin-bottom: 3em;
 }
 
 header h1 {
@@ -90,7 +90,7 @@ main {
   row-gap: 0.5em;
   animation-duration: 0.5s;
   animation-name: slidein;
-  align-items:top;
+  align-items: top;
   justify-items: top;
 }
 
@@ -109,23 +109,22 @@ main {
 }
 
 .remove-button {
-    width:fit-content;
-    height:fit-content;
-    padding:0;
-    font-family: ;
+  width: fit-content;
+  height: fit-content;
+  padding: 0;
   grid-column-start: 2;
   grid-row-start: 1;
   cursor: pointer;
-  background:transparent;
-  border:none;
+  background: transparent;
+  border: none;
   font-size: 1.2em;
-  outline:none;
-  color:rgb(44, 44, 44);
-  transition:color 0.1s;
+  outline: none;
+  color: rgb(44, 44, 44);
+  transition: color 0.1s;
 }
 
-.remove-button:hover{
-    color:rgb(204, 91, 25);
+.remove-button:hover {
+  color: rgb(204, 91, 25);
 }
 
 .grid-item:hover {
@@ -135,8 +134,8 @@ main {
 .grid-item h2 {
   color: rgb(132, 140, 255);
   font-size: 1.5em;
-  margin:0;
-  margin-bottom:0.2em;
+  margin: 0;
+  margin-bottom: 0.2em;
   line-height: 1.2em;
 }
 
@@ -166,8 +165,7 @@ main {
     justify-items: center;
     min-height: 10em;
     margin-bottom: 1em;
-    height:auto;
-
+    height: auto;
   }
   .add-book-button {
     grid-row-start: 2;
@@ -176,75 +174,72 @@ main {
   }
 }
 
-@media only screen and (max-width:400px){
-    .grid-item{
-        margin-bottom:0;
-    }
+@media only screen and (max-width: 400px) {
+  .grid-item {
+    margin-bottom: 0;
+  }
 }
 
-.read{
-    color:rgb(35, 223, 35);
+.read {
+  color: rgb(35, 223, 35);
 }
-.not-read{
-    color:grey
+.not-read {
+  color: grey;
 }
 
-{box-sizing: border-box;}
-
-
-
-/* The popup form - hidden by default */
 .form-popup {
   display: none;
   position: fixed;
-  border: 3px solid #f1f1f1;
   z-index: 9;
   left: 50%;
   margin-left: -150px;
-  top:50%;
-  margin-top:-200px;
+  top: 50%;
+  margin-top: -200px;
+  animation-name: slidein;
+  animation-duration: 0.2s;
 }
 
-/* Add styles to the form container */
 .form-container {
   max-width: 300px;
-  padding: 10px;
+  padding: 1em;
   background-color: white;
+  border-radius: 0.5em;
 }
 
-/* Full-width input fields */
-.form-container input[type=text]{
+#enter-btn{
+    margin-top:1.5em;
+}
+
+.form-container input[type="text"] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
   border: none;
   background: #f1f1f1;
+  box-sizing: border-box;
 }
 
-/* When the inputs get focus, do something */
-.form-container input[type=text]:focus{
+.form-container input[type="text"]:focus {
   background-color: #ddd;
   outline: none;
 }
 
-/* Set a style for the submit/login button */
 .form-container .btn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
   width: 100%;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   opacity: 0.8;
 }
 
-/* Add a red background color to the cancel button */
 .form-container .cancel {
   background-color: red;
 }
 
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
+.form-container .btn:hover,
+.open-button:hover {
   opacity: 1;
 }
