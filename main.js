@@ -3,7 +3,7 @@ const gridContainer = document.querySelector(".grid-container");
 const addButton = document.querySelector(".add-book-button");
 const emptyMessage = document.querySelector(".library-empty-message");
 const main = document.querySelector("main");
-const removeButtons = document.querySelectorAll(".remove-button");
+
 
 function Book(title, author, length, readStatus) {
   this.title = title;
@@ -13,10 +13,7 @@ function Book(title, author, length, readStatus) {
   this.info = `<h2>${this.title}</h2><p> by ${this.author}.</p> <p>${this.length} pages long.</p> <p>${this.readStatus}</p>`;
 }
 
-function addBookToLibrary(book) {
-  myLibrary.push(book);
-  console.log(`${book.title} added to library`);
-}
+
 
 function addBookToLibrary() {
   if (myLibrary.length >= 0) {
@@ -56,12 +53,10 @@ function createClearButton(gridItems) {
 }
 
 function removeBookFromLibrary(e) {
-  console.log(e.target.dataset.attribute);
   myLibrary.splice(e.target.dataset.attribute, 1);
   let itemToRemove = document.querySelector(
     `[id="${e.target.dataset.attribute}"]`
   );
-  console.log(itemToRemove);
   gridContainer.removeChild(itemToRemove);
 
   resetDataTagOrder();
