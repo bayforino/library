@@ -180,10 +180,13 @@ main {
   }
 }
 
-.read {
+.read-text {
   color: rgb(35, 223, 35);
+  cursor:pointer;
+  user-select: none;
 }
-.not-read {
+
+#not-read {
   color: grey;
 }
 
