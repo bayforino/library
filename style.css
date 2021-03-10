@@ -183,7 +183,7 @@ main {
 
 .read-text {
   color: rgb(35, 223, 35);
-  cursor:pointer;
+  cursor: pointer;
   user-select: none;
 }
 
@@ -208,20 +208,20 @@ main {
   padding: 1em;
   background-color: white;
   border-radius: 0.5em;
-  user-select:none;
+  user-select: none;
 }
 
-#enter-btn{
-    margin-top:1.5em;
+#enter-btn {
+  margin-top: 1.5em;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   appearance: none;
-
 }
 
-.form-container input[type="text"], input[type="number"]{
+.form-container input[type="text"],
+input[type="number"] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -230,9 +230,8 @@ input::-webkit-inner-spin-button {
   box-sizing: border-box;
 }
 
-
-
-.form-container input[type="text"]:focus, input[type="number"]:focus{
+.form-container input[type="text"]:focus,
+input[type="number"]:focus {
   background-color: #ddd;
   outline: none;
 }
