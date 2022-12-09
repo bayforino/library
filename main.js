@@ -15,12 +15,14 @@ function sayIfRead(readStatus) {
   }
 }
 
-function Book(title, author, length, readStatus) {
-  this.title = title;
-  this.author = author;
-  this.length = length;
-  this.readStatus = readStatus;
-  this.info = `<h2>${this.title}</h2><p> by ${this.author}.</p> <p>${this.length} pages long.</p>`;
+class Book {
+  constructor(title, author, length, readStatus, info) {
+    this.title = title;
+    this.author = author;
+    this.length = length;
+    this.readStatus = readStatus;
+    this.info = `<h2>${this.title}</h2><p> by ${this.author}.</p> <p>${this.length} pages long.</p>`;
+  }
 }
 
 function initialGenerateLibrary() {
